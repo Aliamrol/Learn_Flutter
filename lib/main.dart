@@ -261,6 +261,8 @@
 import 'package:flutter/material.dart';
 
 class MenuButton extends StatelessWidget {
+  const MenuButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -271,6 +273,123 @@ class MenuButton extends StatelessWidget {
   }
 }
 
+class Drawer1 extends StatelessWidget {
+  const Drawer1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Drawer(
+      child: Column(
+        children: [
+          Expanded(
+              child: Center(
+                  child: Text(
+            "User1",
+            style: TextStyle(color: Colors.red),
+          ))),
+          Expanded(
+              child: Center(
+                  child: Text("User2", style: TextStyle(color: Colors.red)))),
+          Expanded(
+              child: Center(
+                  child: Text("User3", style: TextStyle(color: Colors.red)))),
+          Expanded(
+              child: Center(
+                  child: Text("User4", style: TextStyle(color: Colors.red)))),
+          Expanded(
+              child: Center(
+                  child: Text("User5", style: TextStyle(color: Colors.red)))),
+        ],
+      ),
+    );
+  }
+}
+
+class Drawer2 extends StatelessWidget {
+  const Drawer2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+        backgroundColor: Colors.greenAccent,
+        elevation: 150.0,
+        shadowColor: Colors.red,
+        surfaceTintColor: Colors.green,
+        child: ListView(
+          children: [
+            ListTile(
+              title: const Text("ALi Amrol",
+                  style: TextStyle(fontFamily: "nas"), textScaleFactor: 3),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text(
+                "Mina Hasanpour",
+                style: TextStyle(fontFamily: "nas"),
+                textScaleFactor: 3,
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text("Alireza Pazooki",
+                  style: TextStyle(fontFamily: "nas"), textScaleFactor: 3),
+              onTap: () {},
+            )
+          ],
+        ));
+  }
+}
+
+class SendIcon extends StatelessWidget {
+  const SendIcon({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const IconButton(onPressed: null, icon: Icon(Icons.send));
+  }
+}
+
+class SearchIcon extends StatelessWidget {
+  const SearchIcon({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: const Center(
+              child: Text("Fuck You!"),
+            ),
+            duration: const Duration(seconds: 7),
+            showCloseIcon: true,
+            backgroundColor: Colors.blue,
+            action: SnackBarAction(
+                label: "Thanks",
+                textColor: Colors.red,
+                onPressed: () {
+                  ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                }),
+          ));
+        },
+        icon: const Icon(Icons.search));
+  }
+}
+
+class FloatingPointAction1 extends StatelessWidget {
+  const FloatingPointAction1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton.extended(
+        backgroundColor: Colors.blue[900],
+        onPressed: () {},
+        label: const Text("LIKE"),
+        extendedIconLabelSpacing: 10,
+        icon: const Icon(Icons.thumb_up),
+        autofocus: true);
+  }
+}
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -278,49 +397,41 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Builder(builder: (context) {
-          return IconButton(onPressed: (){
-            Scaffold.of(context).openDrawer();
-          }, icon: const Icon(Icons.menu));
-        },),
-        title: const Text("BaghMoshaver"),
+        leading: Builder(
+          builder: (context) {
+            return const MenuButton();
+          },
+        ),
+        title: const Center(
+          child: Text(
+            "BaghMoshaver",
+            style: TextStyle(fontFamily: "nas"),
+            textScaleFactor: 2,
+          ),
+        ),
         actions: const [
-          IconButton(onPressed: null, icon: Icon(Icons.send)),
-          IconButton(onPressed: null, icon: Icon(Icons.search))
+          SendIcon(),
+          SearchIcon(),
         ],
       ),
-      drawer: const Drawer(
-        child: Column(
-          children: [
-            Expanded(
-                child: Center(
-                    child: Text(
-                      "User1",
-                      style: TextStyle(color: Colors.red),
-                    ))),
-            Expanded(
-                child: Center(
-                    child: Text("User2", style: TextStyle(color: Colors.red)))),
-            Expanded(
-                child: Center(
-                    child: Text("User3", style: TextStyle(color: Colors.red)))),
-            Expanded(
-                child: Center(
-                    child: Text("User4", style: TextStyle(color: Colors.red)))),
-            Expanded(
-                child: Center(
-                    child: Text("User5", style: TextStyle(color: Colors.red)))),
-          ],
-        ),
-      ),
+      drawer: const Drawer2(),
+      floatingActionButton: const FloatingPointAction1(),
       body: const Center(
-        child: Text("Provide your farm"),
+        child: Text(
+          "hello world",
+          textScaleFactor: 4.8,
+          style: TextStyle(fontFamily: "nas"),
+        ),
       ),
     );
   }
 }
 
 void main() {
-  runApp(const MaterialApp(
-      debugShowCheckedModeBanner: false, home: SafeArea(child: HomeScreen())));
+  runApp(MaterialApp(
+      theme: ThemeData(
+          colorSchemeSeed: Colors.blue[500],
+          scaffoldBackgroundColor: Colors.blue[100]),
+      debugShowCheckedModeBanner: false,
+      home: const SafeArea(child: HomeScreen())));
 }
