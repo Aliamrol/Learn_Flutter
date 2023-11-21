@@ -260,6 +260,8 @@
 
 import 'package:flutter/material.dart';
 
+int likeCount = 0;
+
 class MenuButton extends StatelessWidget {
   const MenuButton({super.key});
 
@@ -382,7 +384,10 @@ class FloatingPointAction1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton.extended(
         backgroundColor: Colors.blue[900],
-        onPressed: () {},
+        onPressed: () {
+          print("like count = $likeCount");
+          likeCount++;
+        },
         label: const Text("LIKE"),
         extendedIconLabelSpacing: 10,
         icon: const Icon(Icons.thumb_up),
@@ -402,7 +407,7 @@ class HomeScreen extends StatelessWidget {
             return const MenuButton();
           },
         ),
-        title: const Center(
+        title: Center(
           child: Text(
             "BaghMoshaver",
             style: TextStyle(fontFamily: "nas"),
@@ -416,9 +421,9 @@ class HomeScreen extends StatelessWidget {
       ),
       drawer: const Drawer2(),
       floatingActionButton: const FloatingPointAction1(),
-      body: const Center(
+      body: Center(
         child: Text(
-          "hello world",
+          "LIKES = $likeCount",
           textScaleFactor: 4.8,
           style: TextStyle(fontFamily: "nas"),
         ),
@@ -433,5 +438,7 @@ void main() {
           colorSchemeSeed: Colors.blue[500],
           scaffoldBackgroundColor: Colors.blue[100]),
       debugShowCheckedModeBanner: false,
-      home: const SafeArea(child: HomeScreen())));
+      home: SafeArea(
+          child: Directionality(
+              textDirection: TextDirection.ltr, child: HomeScreen()))));
 }
