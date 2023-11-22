@@ -1,266 +1,9 @@
-// import 'package:flutter/material.dart';
-//
-// class MyAppBar extends StatelessWidget {
-//   const MyAppBar({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Material(
-//       child: Row(
-//         children: [
-//           Container(
-//             width: 20.0,
-//             decoration: const BoxDecoration(color: Colors.red),
-//           )
-//         ],
-//       ),
-//     );
-//   }
-// }
-//
-// class MyScaffold extends StatelessWidget {
-//   const MyScaffold({required this.title, required this.centerTitle ,super.key});
-//
-//   final Text centerTitle;
-//   final Text title;
-//   @override
-//   Widget build(BuildContext context) {
-//     return Material(
-//         child: Column(
-//       children: [
-//         Container(
-//           height: 56.0,
-//           decoration: const BoxDecoration(color: Colors.blue),
-//           child:  Row(
-//             children: [
-//               const IconButton(onPressed: null, icon: Icon(Icons.menu)),
-//               Expanded(child: Center(child: title)),
-//               const IconButton(onPressed: null, icon: Icon(Icons.threed_rotation)),
-//               const IconButton(onPressed: null, icon: Icon(Icons.search))
-//             ],
-//           ),
-//         ),
-//         Expanded(
-//              child: Center(
-//           child: centerTitle,
-//         ))
-//       ],
-//     ));
-//   }
-// }
-//
-// void main() {
-//   runApp(const MaterialApp(
-//       home: SafeArea(
-//     child: MyScaffold(title: Text("Hello Amir Amrol"),centerTitle: Text("Provide your farm", style: TextStyle(fontWeight: FontWeight.bold),),),
-//   )));
-// }
-// //
-// // class MyApp extends StatelessWidget {
-// //   const MyApp({super.key});
-// //
-// //   // This widget is the root of your application.
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return MaterialApp(
-// //       title: 'Flutter Demo',
-// //       theme: ThemeData(
-// //         // This is the theme of your application.
-// //         //
-// //         // TRY THIS: Try running your application with "flutter run". You'll see
-// //         // the application has a blue toolbar. Then, without quitting the app,
-// //         // try changing the seedColor in the colorScheme below to Colors.green
-// //         // and then invoke "hot reload" (save your changes or press the "hot
-// //         // reload" button in a Flutter-supported IDE, or press "r" if you used
-// //         // the command line to start the app).
-// //         //
-// //         // Notice that the counter didn't reset back to zero; the application
-// //         // state is not lost during the reload. To reset the state, use hot
-// //         // restart instead.
-// //         //
-// //         // This works for code too, not just values: Most code changes can be
-// //         // tested with just a hot reload.
-// //         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-// //         useMaterial3: true,
-// //       ),
-// //       home: const MyHomePage(title: 'Flutter Demo Home Page'),
-// //     );
-// //   }
-// // }
-// //
-// // class MyHomePage extends StatefulWidget {
-// //   const MyHomePage({super.key, required this.title});
-// //
-// //   // This widget is the home page of your application. It is stateful, meaning
-// //   // that it has a State object (defined below) that contains fields that affect
-// //   // how it looks.
-// //
-// //   // This class is the configuration for the state. It holds the values (in this
-// //   // case the title) provided by the parent (in this case the App widget) and
-// //   // used by the build method of the State. Fields in a Widget subclass are
-// //   // always marked "final".
-// //
-// //   final String title;
-// //
-// //   @override
-// //   State<MyHomePage> createState() => _MyHomePageState();
-// // }
-// //
-// // class _MyHomePageState extends State<MyHomePage> {
-// //   int _counter = 0;
-// //
-// //   void _incrementCounter() {
-// //     setState(() {
-// //       // This call to setState tells the Flutter framework that something has
-// //       // changed in this State, which causes it to rerun the build method below
-// //       // so that the display can reflect the updated values. If we changed
-// //       // _counter without calling setState(), then the build method would not be
-// //       // called again, and so nothing would appear to happen.
-// //       _counter++;
-// //     });
-// //   }
-// //
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     // This method is rerun every time setState is called, for instance as done
-// //     // by the _incrementCounter method above.
-// //     //
-// //     // The Flutter framework has been optimized to make rerunning build methods
-// //     // fast, so that you can just rebuild anything that needs updating rather
-// //     // than having to individually change instances of widgets.
-// //     return Scaffold(
-// //       appBar: AppBar(
-// //         // TRY THIS: Try changing the color here to a specific color (to
-// //         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-// //         // change color while the other colors stay the same.
-// //         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-// //         // Here we take the value from the MyHomePage object that was created by
-// //         // the App.build method, and use it to set our appbar title.
-// //         title: Text(widget.title),
-// //       ),
-// //       body: Center(
-// //         // Center is a layout widget. It takes a single child and positions it
-// //         // in the middle of the parent.
-// //         child: Column(
-// //           // Column is also a layout widget. It takes a list of children and
-// //           // arranges them vertically. By default, it sizes itself to fit its
-// //           // children horizontally, and tries to be as tall as its parent.
-// //           //
-// //           // Column has various properties to control how it sizes itself and
-// //           // how it positions its children. Here we use mainAxisAlignment to
-// //           // center the children vertically; the main axis here is the vertical
-// //           // axis because Columns are vertical (the cross axis would be
-// //           // horizontal).
-// //           //
-// //           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-// //           // action in the IDE, or press "p" in the console), to see the
-// //           // wireframe for each widget.
-// //           mainAxisAlignment: MainAxisAlignment.center,
-// //           children: <Widget>[
-// //             const Text(
-// //               'You have pushed the button this many times:',
-// //             ),
-// //             Text(
-// //               '$_counter',
-// //               style: Theme.of(context).textTheme.headlineMedium,
-// //             ),
-// //           ],
-// //         ),
-// //       ),
-// //       floatingActionButton: FloatingActionButton(
-// //         onPressed: _incrementCounter,
-// //         tooltip: 'Increment',
-// //         child: const Icon(Icons.add),
-// //       ), // This trailing comma makes auto-formatting nicer for build methods.
-// //     );
-// //   }
-// // }
-//
-// // import 'package:flutter/cupertino.dart';
-// // import 'package:flutter/material.dart';
-//
-// // void main() {
-// //   runApp(const MaterialApp(
-// //     home: SafeArea(child: HomeScreen()),
-// //   ));
-// // }
-//
-// class Wtf extends StatelessWidget {
-//   const Wtf({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Material(
-//         child: Column(
-//       children: [
-//         Container(
-//           decoration: const BoxDecoration(color: Colors.blue),
-//           child: const Row(
-//             children: [
-//               IconButton(onPressed: null, icon: Icon(Icons.menu)),
-//               Expanded(child: Center(child: Text("Hi Bithc"))),
-//               IconButton(onPressed: null, icon: Icon(Icons.search_rounded))
-//             ],
-//           ),
-//         ),
-//         Expanded(child: Container(
-//           decoration: const BoxDecoration(color: Colors.green),
-//           child: const Column(
-//             children: [
-//               Expanded(child: Center(child: Text("Welcome to BaghMoshaver"),)),
-//               IconButton(onPressed: null, icon: Icon(Icons.battery_charging_full)),
-//               Row(
-//                 children: [
-//                   Expanded(child: Icon(Icons.co_present_sharp)),
-//                   Expanded(child: Icon(Icons.code)),
-//                   Expanded(child: Icon(Icons.account_tree))
-//                 ],
-//               ),
-//               Expanded(child: Center(child: Text("Welcome to BaghMoshaver"),))
-//             ],
-//           ),
-//         )),
-//         Container(
-//           decoration: const BoxDecoration(color: Colors.red),
-//           child: const Row(
-//             children: [
-//               IconButton(onPressed: null, icon: Icon(Icons.backspace)),
-//               Expanded(child: IconButton(onPressed: null, icon: Icon(Icons.message))),
-//               IconButton(onPressed: null, icon: Icon(Icons.send))
-//             ],
-//           ),
-//         )
-//       ],
-//     ));
-//   }
-// }
-//
-//
-// class HomeScreen extends StatelessWidget {
-//   const HomeScreen({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         appBar: AppBar(
-//           title: const Text(""),
-//         ),
-//         body: ListView.builder(
-//           itemCount: 10,
-//           itemBuilder: (context, index) {
-//             return Card(
-//               child: ListTile(
-//                 title: Text("User $index"),
-//               ),
-//             );
-//           },
-//         ));
-//   }
-// }
-
 import 'package:flutter/material.dart';
 
 int likeCount = 0;
+int aliCount = 0;
+int minaCount = 0;
+int pazookiCount = 0;
 
 class MenuButton extends StatelessWidget {
   const MenuButton({super.key});
@@ -275,41 +18,14 @@ class MenuButton extends StatelessWidget {
   }
 }
 
-class Drawer1 extends StatelessWidget {
-  const Drawer1({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Drawer(
-      child: Column(
-        children: [
-          Expanded(
-              child: Center(
-                  child: Text(
-            "User1",
-            style: TextStyle(color: Colors.red),
-          ))),
-          Expanded(
-              child: Center(
-                  child: Text("User2", style: TextStyle(color: Colors.red)))),
-          Expanded(
-              child: Center(
-                  child: Text("User3", style: TextStyle(color: Colors.red)))),
-          Expanded(
-              child: Center(
-                  child: Text("User4", style: TextStyle(color: Colors.red)))),
-          Expanded(
-              child: Center(
-                  child: Text("User5", style: TextStyle(color: Colors.red)))),
-        ],
-      ),
-    );
-  }
-}
-
-class Drawer2 extends StatelessWidget {
+class Drawer2 extends StatefulWidget {
   const Drawer2({super.key});
 
+  @override
+  State<StatefulWidget> createState() => _Drawer2();
+}
+
+class _Drawer2 extends State {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -320,22 +36,43 @@ class Drawer2 extends StatelessWidget {
         child: ListView(
           children: [
             ListTile(
-              title: const Text("ALi Amrol",
+              title: Text("ALi Amrol = $aliCount",
                   style: TextStyle(fontFamily: "nas"), textScaleFactor: 3),
-              onTap: () {},
+              onLongPress: () {
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text("ALI AMROL")));
+              },
+              onTap: () {
+                aliCount++;
+                setState(() {});
+              },
             ),
             ListTile(
-              title: const Text(
-                "Mina Hasanpour",
+              title: Text(
+                "Mina Hasanpour = $minaCount",
                 style: TextStyle(fontFamily: "nas"),
                 textScaleFactor: 3,
               ),
-              onTap: () {},
+              onLongPress: () {
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text("MINA HASANPOUR")));
+              },
+              onTap: () {
+                minaCount++;
+                setState(() {});
+              },
             ),
             ListTile(
-              title: const Text("Alireza Pazooki",
+              title: Text("Alireza Pazooki = $pazookiCount",
                   style: TextStyle(fontFamily: "nas"), textScaleFactor: 3),
-              onTap: () {},
+              onLongPress: () {
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text("ALIREZA PAZOOKI")));
+              },
+              onTap: () {
+                pazookiCount++;
+                setState(() {});
+              },
             )
           ],
         ));
@@ -377,58 +114,100 @@ class SearchIcon extends StatelessWidget {
   }
 }
 
-class FloatingPointAction1 extends StatelessWidget {
-  const FloatingPointAction1({super.key});
+class FloatingActionButton1 extends StatefulWidget {
+  const FloatingActionButton1({super.key});
 
+  @override
+  State<StatefulWidget> createState() => _FloatingActionButton1();
+}
+
+class _FloatingActionButton1 extends State {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton.extended(
-        backgroundColor: Colors.blue[900],
-        onPressed: () {
-          print("like count = $likeCount");
-          likeCount++;
-        },
-        label: const Text("LIKE"),
-        extendedIconLabelSpacing: 10,
-        icon: const Icon(Icons.thumb_up),
-        autofocus: true);
+      onPressed: () {
+        likeCount++;
+        setState(() {});
+      },
+      label: Text("LIKES : $likeCount"),
+      backgroundColor: Colors.blue[900],
+      extendedIconLabelSpacing: 10,
+      icon: Icon(Icons.thumb_up),
+    );
   }
 }
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<StatefulWidget> createState() => _HomeScreen();
+}
+
+class _HomeScreen extends State with TickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Builder(
-          builder: (context) {
-            return const MenuButton();
-          },
-        ),
-        title: Center(
-          child: Text(
-            "BaghMoshaver",
-            style: TextStyle(fontFamily: "nas"),
-            textScaleFactor: 2,
+        appBar: AppBar(
+          bottom: TabBar(
+            indicatorColor: Colors.greenAccent,
+            controller: _tabController,
+            tabs: const [
+              Tab(
+                icon: Icon(Icons.perm_contact_cal_rounded),
+                text: "CONTACTS",
+              ),
+              Tab(
+                icon: Icon(Icons.settings),
+                text: "SETTINGS",
+              )
+            ],
           ),
+          leading: Builder(
+            builder: (context) {
+              return const MenuButton();
+            },
+          ),
+          title: const Center(
+            child: Text(
+              "BaghMosher",
+              style: TextStyle(fontFamily: "nas"),
+              textScaleFactor: 2,
+            ),
+          ),
+          actions: const [
+            SendIcon(),
+            SearchIcon(),
+          ],
         ),
-        actions: const [
-          SendIcon(),
-          SearchIcon(),
-        ],
-      ),
-      drawer: const Drawer2(),
-      floatingActionButton: const FloatingPointAction1(),
-      body: Center(
-        child: Text(
-          "LIKES = $likeCount",
-          textScaleFactor: 4.8,
-          style: TextStyle(fontFamily: "nas"),
-        ),
-      ),
-    );
+        drawer: const Drawer2(),
+        floatingActionButton: const FloatingActionButton1(),
+        body: TabBarView(
+          controller: _tabController,
+          children: const [
+            Center(
+              child: Text(
+                "AMIR AMROL",
+                textScaleFactor: 5,
+              ),
+            ),
+            Center(
+              child: Text(
+                "MMDREZA AMROL",
+                textScaleFactor: 5,
+                selectionColor: Colors.red,
+              ),
+            )
+          ],
+        ));
   }
 }
 
@@ -436,9 +215,307 @@ void main() {
   runApp(MaterialApp(
       theme: ThemeData(
           colorSchemeSeed: Colors.blue[500],
+          fontFamily: "nas",
           scaffoldBackgroundColor: Colors.blue[100]),
       debugShowCheckedModeBanner: false,
-      home: SafeArea(
+      home: const SafeArea(
           child: Directionality(
               textDirection: TextDirection.ltr, child: HomeScreen()))));
 }
+
+//
+// import 'package:flutter/material.dart';
+//
+// /// Flutter code sample for [TabBar].
+//
+// void main() => runApp(const TabBarApp());
+//
+// class TabBarApp extends StatelessWidget {
+//   const TabBarApp({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(useMaterial3: true),
+//       home: const TabBarExample(),
+//     );
+//   }
+// }
+//
+// class TabBarExample extends StatelessWidget {
+//   const TabBarExample({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return DefaultTabController(
+//       initialIndex: 1,
+//       length: 3,
+//       child: Scaffold(
+//         appBar: AppBar(
+//           title: const Text('TabBar Sample'),
+//           bottom: const TabBar(
+//             tabs: <Widget>[
+//               Tab(
+//                 icon: Icon(Icons.cloud_outlined),
+//               ),
+//               Tab(
+//                 icon: Icon(Icons.beach_access_sharp),
+//               ),
+//               Tab(
+//                 icon: Icon(Icons.brightness_5_sharp),
+//               ),
+//             ],
+//           ),
+//         ),
+//         body: const TabBarView(
+//           children: <Widget>[
+//             Center(
+//               child: Text("It's cloudy here"),
+//             ),
+//             Center(
+//               child: Text("It's rainy here"),
+//             ),
+//             Center(
+//               child: Text("It's sunny here"),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+//
+
+// import 'package:flutter/material.dart';
+//
+//
+// int likeCount = 0;
+// int aliCount = 0;
+// int minaCount = 0;
+// int pazookiCount = 0;
+//
+// void main() {
+//   runApp(
+//     MaterialApp(
+//       theme: ThemeData(
+//           colorSchemeSeed: Colors.blue[500],
+//           scaffoldBackgroundColor: Colors.blue[100]),
+//       debugShowCheckedModeBanner: false,
+//       home: const SafeArea(
+//         child: Directionality(
+//           textDirection: TextDirection.ltr,
+//           child: HomeScreen(),
+//         ),
+//       ),
+//     ),
+//   );
+// }
+//
+// class HomeScreen extends StatefulWidget {
+//   const HomeScreen({super.key});
+//
+//   @override
+//   State<StatefulWidget> createState() => _HomeScreen();
+// }
+//
+// class _HomeScreen extends State<HomeScreen> with TickerProviderStateMixin {
+//   void _update() {
+//     setState(() {});
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         bottom: TabBar(
+//           controller: TabController(length: 3, vsync: this),
+//           tabs: const [
+//             Tab(
+//               icon: Icon(Icons.settings),
+//               text: "Settings",
+//             ),
+//             Tab(
+//               icon: Icon(Icons.wechat_sharp),
+//               text: "Chats",
+//             ),
+//             Tab(
+//               icon: Icon(Icons.contacts),
+//               text: "Contacts",
+//             )
+//           ],
+//         ),
+//         leading: Builder(
+//           builder: (context) {
+//             return const MenuButton();
+//           },
+//         ),
+//         title: const Center(
+//           child: Text(
+//             "BaghMosher",
+//             style: TextStyle(fontFamily: "nas"),
+//             textScaleFactor: 2,
+//           ),
+//         ),
+//         actions: const [
+//           SendIcon(),
+//           SearchIcon(),
+//         ],
+//       ),
+//       drawer: const Drawer2(),
+//       floatingActionButton: FloatingActionButton1(_update),
+//       body: TabBarView(
+//         controller: TabController(length: 3, vsync: this),
+//         children: const [
+//           Center(
+//             child: Text("Contacts"),
+//           ),
+//           Center(
+//             child: Text("Contacts"),
+//           ),
+//           Center(
+//             child: Text("Contacts"),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+//
+// class MenuButton extends StatelessWidget {
+//   const MenuButton({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return IconButton(
+//       onPressed: () {
+//         Scaffold.of(context).openDrawer();
+//       },
+//       icon: const Icon(Icons.menu),
+//     );
+//   }
+// }
+//
+// class Drawer2 extends StatefulWidget {
+//   const Drawer2({super.key});
+//
+//   @override
+//   State<StatefulWidget> createState() => _Drawer2();
+// }
+//
+// class _Drawer2 extends State<Drawer2> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Drawer(
+//         backgroundColor: Colors.greenAccent,
+//         elevation: 150.0,
+//         shadowColor: Colors.red,
+//         surfaceTintColor: Colors.green,
+//         child: ListView(
+//           children: [
+//             ListTile(
+//               title: Text("ALi Amrol = $aliCount",
+//                   style: const TextStyle(fontFamily: "nas"),
+//                   textScaleFactor: 3),
+//               onLongPress: () {
+//                 ScaffoldMessenger.of(context)
+//                     .showSnackBar(const SnackBar(content: Text("ALI AMROL")));
+//               },
+//               onTap: () {
+//                 aliCount++;
+//                 setState(() {});
+//               },
+//             ),
+//             ListTile(
+//               title: Text(
+//                 "Mina Hasanpour = $minaCount",
+//                 style: const TextStyle(fontFamily: "nas"),
+//                 textScaleFactor: 3,
+//               ),
+//               onLongPress: () {
+//                 ScaffoldMessenger.of(context).showSnackBar(
+//                     const SnackBar(content: Text("MINA HASANPOUR")));
+//               },
+//               onTap: () {
+//                 minaCount++;
+//                 setState(() {});
+//               },
+//             ),
+//             ListTile(
+//               title: Text("Alireza Pazooki = $pazookiCount",
+//                   style: const TextStyle(fontFamily: "nas"),
+//                   textScaleFactor: 3),
+//               onLongPress: () {
+//                 ScaffoldMessenger.of(context).showSnackBar(
+//                     const SnackBar(content: Text("ALIREZA PAZOOKI")));
+//               },
+//               onTap: () {
+//                 pazookiCount++;
+//                 setState(() {});
+//               },
+//             )
+//           ],
+//         ));
+//   }
+// }
+//
+// class SendIcon extends StatelessWidget {
+//   const SendIcon({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return const IconButton(onPressed: null, icon: Icon(Icons.send));
+//   }
+// }
+//
+// class SearchIcon extends StatelessWidget {
+//   const SearchIcon({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return IconButton(
+//         onPressed: () {
+//           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+//             content: const Center(
+//               child: Text("Fuck You!"),
+//             ),
+//             duration: const Duration(seconds: 7),
+//             showCloseIcon: true,
+//             backgroundColor: Colors.blue,
+//             action: SnackBarAction(
+//                 label: "Thanks",
+//                 textColor: Colors.red,
+//                 onPressed: () {
+//                   ScaffoldMessenger.of(context).hideCurrentSnackBar();
+//                 }),
+//           ));
+//         },
+//         icon: const Icon(Icons.search));
+//   }
+// }
+//
+// class FloatingActionButton1 extends StatefulWidget {
+//   final Function update;
+//
+//   const FloatingActionButton1(this.update, {Key? key}) : super(key: key);
+//
+//   @override
+//   State<StatefulWidget> createState() => _FloatingActionButton1();
+// }
+//
+// class _FloatingActionButton1 extends State<FloatingActionButton1> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return FloatingActionButton.extended(
+//       onPressed: () {
+//         likeCount++;
+//         widget.update();
+//         setState(() {});
+//       },
+//       label: Text("LIKES : $likeCount"),
+//       backgroundColor: Colors.blue[900],
+//       extendedIconLabelSpacing: 10,
+//       icon: const Icon(Icons.thumb_up),
+//     );
+//   }
+// }
